@@ -32,6 +32,7 @@ func (b *BookService) CreateBook(bookInput *model.BookInput) (*models.Book, erro
 		Title:     bookInput.Title,
 		Author:    bookInput.Author,
 		Publisher: bookInput.Publisher,
+		CountryID: bookInput.CountryID,
 	}
 	err := b.Db.Create(&book).Error
 

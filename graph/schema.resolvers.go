@@ -29,6 +29,7 @@ func (r *mutationResolver) CreateBook(ctx context.Context, input model.BookInput
 		Publisher: book.Publisher,
 		Title:     book.Title,
 		ID:        book.ID,
+		CountryID: book.CountryID,
 	}
 	if err != nil {
 		return nil, err
