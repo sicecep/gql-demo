@@ -11,7 +11,7 @@ type BookRepository interface {
 	UpdateBook(bookInput *model.BookInput, id int) error
 	DeleteBook(id int) error
 	GetOneBook(id int) (*models.Book, error)
-	GetAllBooks() ([]*model.Book, error)
+	GetAllBooks() ([]*models.Book, error)
 	GetOneBookByAuthor(author string) (*models.Book, error)
 }
 
@@ -61,8 +61,8 @@ func (b *BookService) GetOneBook(id int) (*models.Book, error) {
 	return book, err
 }
 
-func (b *BookService) GetAllBooks() ([]*model.Book, error) {
-	books := []*model.Book{}
+func (b *BookService) GetAllBooks() ([]*models.Book, error) {
+	books := []*models.Book{}
 	err := b.Db.Find(&books).Error
 	return books, err
 

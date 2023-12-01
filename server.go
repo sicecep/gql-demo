@@ -37,8 +37,10 @@ func main() {
 	}
 
 	repo := repository.NewBookService(db)
+	countryRepo := repository.NewCountryService(db)
 	srv := handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{
-		BookRepository: repo,
+		BookRepository:    repo,
+		CountryRepository: countryRepo,
 	}}))
 
 	http.Handle("/", playground.Handler("GraphQL playground", "/query"))

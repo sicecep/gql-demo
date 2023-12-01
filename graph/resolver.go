@@ -9,5 +9,6 @@ import "github.com/sicecep/gql-demo/app/repository"
 // It serves as dependency injection for your app, add any dependencies you require here.
 
 type Resolver struct {
-	BookRepository repository.BookRepository
+	BookRepository    repository.BookRepository
+	CountryRepository repository.CountryRepository
 }

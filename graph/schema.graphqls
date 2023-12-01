@@ -7,23 +7,35 @@ type Book {
   title: String!
   author: String!
   publisher: String!
+  country: Country!
 }
 
 input BookInput{
   title: String!
   author: String!
   publisher: String!
+  countryId: Int!
+}
+
+type Country {
+  id: Int!
+  name: String!
+}
+
+type CountryInput{
+  name: String!
 }
 
 type Mutation{
   CreateBook(input: BookInput!): Book!
   DeleteBook(id: Int!): String!
   UpdateBook(id: Int!, input: BookInput!): String!
-
+  CreateCountry(name: String!): Country!
 }
 
 type Query{
   GetAllBooks: [Book!]!
   GetOneBook(id: Int!): Book! 
   GetOneBookByAuthor(author: String!): Book! 
+  GetCountryByID(id: Int!): Country! 
 }

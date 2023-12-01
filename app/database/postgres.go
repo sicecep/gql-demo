@@ -30,5 +30,5 @@ func NewConnection(config *Config) (*gorm.DB, error) {
 }
 
 func Migrate(db *gorm.DB) error {
-	return db.AutoMigrate(&models.Book{})
+	return db.AutoMigrate(&models.Book{}, &models.Country{})
 }
